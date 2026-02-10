@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="jp">
+    <head>
+        <meta charset="UTF-8">
+        <title>天気情報</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <h1>地域名：{{ area_name }}</h1>
+        <form action="/weather" method="get">
+            {% for a in ["東京","大阪","愛知"] %}
+            {% if area_name == a %}
+                <strong>{{ a }}</strong>
+            {% else %}
+                <button type="submit" name="area" value="{{ a }}">{{ a }}</button>
+            {% endif %}
+            {% endfor %}
+        </form>
+        <h2>{{ three_days_weather | length }}日間の天気情報</h2>
+        <div class="weather-list">
+            {% for weather in three_days_weather %}
+                <div class="container">
+                    <p>{{ weather.date }}（{{ weather.day }}）</p>
+                    <img src="{{ url_for('static', filename='icons/' ~ weather.image) }}" alt="天気アイコン">
+                    <p>天気：{{ weather.weather }}</p>
+                    <p>最高：{{ weather.tempMax }}℃</p>
+                    <p>最低：{{ weather.tempMin }}℃</p>
+                </div>
+            {% endfor %}
+        </div>
+        <h2>週間の天気情報</h2>
+
+        <div class="weather-list">
+            {% for weather in weekly_weather %}
+                <div class="container">
+                    <p>{{ weather.date }}（{{ weather.day }}）</p>
+                    <img src="{{ url_for('static', filename='icons/' ~ weather.image) }}" alt="天気アイコン">
+                    <p>天気：{{ weather.weather }}</p>
+                    <p>最高：{{ weather.tempMax }}℃</p>
+                    <p>最低：{{ weather.tempMin }}℃</p>
+                </div>
+            {% endfor %}
+        </div>
+        <h2>雨雲レーダー</h2>
+        <p>
+            気象庁「雨雲の動き」：
+            <a 
+            href="https://www.jma.go.jp/bosai/nowc/" 
+            target="_blank"
+            rel="noopener noreferrer">
+                ※最新の気象状況を確認するため、公式サイトへ
+            </a>
+        </p>
+        <p>出典：気象庁「雨雲の動き」（https://www.jma.go.jp/bosai/nowc/）</p>
+    </body>
+</html>

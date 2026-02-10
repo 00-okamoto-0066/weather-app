@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="jp">
+    <head>
+        <meta charset="UTF-8">
+        <title>天気情報</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <h1>天気情報</h1>
+        <form action="/weather" method="get">
+            <button type="submit" name="area" value="東京">東京</button>
+            <button type="submit" name="area" value="大阪">大阪</button>
+            <button type="submit" name="area" value="愛知">愛知</button>
+        </form>
+    </body>
+</html>

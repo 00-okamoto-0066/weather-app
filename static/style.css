@@ -1,0 +1,110 @@
+/* ページ全体の基本設定*/
+body {
+     /* 見やすいフォント指定 */
+    font-family: "Segoe UI", "Hiragino Kaku Gothic ProN", sans-serif;
+    background: #f5f7fa; 
+
+    /* ブラウザ標準の余白をリセット */
+    margin: 0;
+    padding: 30px; 
+}
+
+
+
+/* 画面を週間天気を横並びにする*/
+.weather-list {
+    display: grid;
+
+    /* 1列あたり最低220px、画面幅に応じて自動で列数を調整 */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 20px;
+    max-width: 1000px;
+
+    /* 画面の中央に配置 */
+    margin: 0 auto;
+}
+
+
+
+/* 1日分の天気情報の枠*/
+.container {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+
+    /* うっすら影をつける */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* 天気アイコン */
+.container img {
+    /* 画像の横幅を小さくする */
+    width: 100px;
+
+    height: auto;
+
+     /* 中央寄せを効かせるため */
+    display: block;
+
+    margin: 10px auto;
+}
+
+
+
+/* タイトル（見出し）のデザイン*/
+h1 {
+    color: #333; 
+    /* 見出し下に青い線を表示*/
+    border-bottom: 2px solid #4a90e2;
+
+    /*文字と下線の間に余白*/
+    padding-bottom: 5px;
+    
+    text-align: center;
+}
+
+
+
+/* 小見出しを中央寄せ */
+h2 {
+      text-align: center;
+}
+
+
+
+/* 本文テキストのデザイン*/
+.container p {
+    font-size: 16px; 
+
+    margin: 10px 0; 
+
+}
+
+p {
+    font-size: 16px;
+    text-align: center;
+}
+
+/* フォーム内の要素（ボタン）を中央に配置 */
+form {
+    text-align: center;
+}
+
+
+
+/* フォーム内の送信ボタンの見た目を整える */
+form button { 
+    padding: 12px 30px;
+    font-size: 16px;
+
+    background-color: #4a90e2;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+
+    /*マウスをボタンに乗せたとき、カーソルを指の形にする */
+    cursor: pointer;
+}

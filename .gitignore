@@ -1,0 +1,13 @@
+# Pythonが自動で作るキャッシュファイル
+__pycache__/
+*.pyc
+
+# 仮想環境（ライブラリやPython本体が入るためGitHubに上げない）
+.venv/
+venv/
+
+# 環境変数ファイル（APIキーや秘密情報が入る可能性がある）
+.env
+
+# Macが自動で作る不要ファイル
+.DS_Store
