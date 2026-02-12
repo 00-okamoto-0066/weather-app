@@ -20,12 +20,14 @@
 ## 起動方法
 
 ### 1. 必要なライブラリをインストール
-
+```bash
 pip install -r requirements.txt
+```
 
 ### 2. アプリを起動
-
-python app.py
+```bash
+uv run app.py
+```
 
 ### 3. ブラウザでアクセス
 
@@ -34,7 +36,7 @@ python app.py
 http://127.0.0.1:5000
 
 ## フォルダ構成
-
+```
 weather-app/
 ├─ app.py
 ├─ get_weather.py
@@ -50,7 +52,5 @@ weather-app/
         ├─ sunny.png
         ├─ rainy.png
         └─ ...
+```
 
-## 作成者
-
-研修課題として作成
